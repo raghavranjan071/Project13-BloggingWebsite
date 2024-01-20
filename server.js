@@ -18,6 +18,15 @@ connectDB();
 //rest objecct
 const app = express();
 
+//For Vercel
+app.use(cor(
+  {
+    origin: ["https://deploy-mern-lwhq.vercel.app"],
+    methods: ["POST","GET"],
+    credentials: true
+  }
+));
+
 //middelwares
 app.use(cors());
 app.use(express.json());
